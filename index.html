@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Krusty Kookies</title>
 
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
 		<link rel="stylesheet" href="css/reset.css">
 
@@ -11,7 +12,6 @@
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 
 	</head>
 	<body>
@@ -27,7 +27,7 @@
 			<div class="card"></div>
 			<div class="card">
 				<h1 class="title">Login</h1>
-				<form method="post" id="form-login">
+				<form method="post" id="form-login" action="">
 					<div class="input-container">
 						<input type="text" name="username" required="required"/>
 						<label for="username">Username</label>
@@ -40,7 +40,7 @@
 					</div>
 					<div class="button-container">
 						<button id="btn-login"><span>Go</span></button>
-						<div style="margin-top: 10px; visibility: hidden;" id="login-error" class="alert alert-danger"></div>
+						<div style="margin-top: 10px; display: none;" id="login-error" class="alert alert-danger"></div>
 					</div>
 					<div class="footer"><a href="#">Forgot your password?</a></div>
 				</form>
