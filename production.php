@@ -29,13 +29,12 @@
       
       
       
-      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="../src/tablefilter.js"></script>
-        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+		<script src="sorting/src/tablefilter.js"></script>
+     
           
-      
-
+    
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
   </head>
@@ -81,20 +80,13 @@
         </nav>
 
       </div>
-    </div>
-        
+    </div> 
 
 
     <!-- Carousel
     ================================================== -->
       
-    <div id="container">  
-      
-    </br>
-    </br>
-    </br>
-   
-    </div>    
+    <div id="container" style="margin-top:5%">  </div>    
         
         <!-- /.carousel -->
 
@@ -111,41 +103,122 @@
               <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Production</h1>
-        <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+        <p>You can create, search and block pallets. Here you are the source of power.</p>
       </div>
-
-
-      <div class="page-header">
-        <h1>Functions</h1>
-      </div>
-      <p>
-        <button type="button" class="btn btn-lg btn-danger">Block pallet</button>
-    
-      </p>
         
-       <div class="row">
-        <div class="col-md-6">
-    		<h2>Search for pallet</h2>
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-lg" placeholder="ID" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
+    <div>   
+      <div id="jquery-script-menu">
+        <div class="jquery-script-center">
+            <div class="jquery-script-clear"></div>
             </div>
         </div>
-	</div> 
+		<script>
+			$(document).ready(function() {
+
+				$('table[name=example-table]').tableFilter({
+				
+					//input : "input[type=search]", Default element
+					
+					trigger : {
+					
+						event 	: "keyup",
+						//element : "button[name=btn-filtro]"
+					},
+
+					//timeout: 80,
+
+					sort : true,
+
+					//caseSensitive : false, Default
+
+					callback : function() { /* Callback após o filtro */
+
+					},
+					
+					notFoundElement : ".not-found"
+				});
+
+			});
+
+
+		</script>
+	
+       
+      
+        <div class="row" style="margin-top:3%">	
+			<div class="col-md-6">
+				<h1>Available Pallets</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-10">
+					<input type="search" class="form-control" placeholder="Filter">
+				</div>		
+				<div class="col-md-2">
+					<button type="button" class="btn btn-primary btn-block" name="btn-filtro">Search</button>
+				</div>
+			</div>
+        </div>
         
-        
-    </br>
+			<hr>
+			
+			<div class="row">
+			
+				<div class="col-md-12">
+
+					<div class="not-found" style="display: none;">No Result Found</div>
+
+					<table name="example-table" class="table table-bordered table-striped">
+
+						<thead>
+							<tr>
+								<th data-tsort-type="cookie">Cookie</th>
+								<th data-tsort-type="id">ID</th>
+								<th data-tsort-type="date">Date</th>
+								<th>Blocked</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td>Strawberry</td>
+								<td>1</td>
+								<td>2015-04-12 00:00:00</td>
+								<td>No</td>
+							</tr>
+							
+							<tr>
+								<td>Chocolate</td>
+								<td>2</td>
+								<td>2015-04-12</td>
+								<td>No</td>
+							</tr>
+							
+							<tr>
+								<td>Dream</td>
+								<td>3</td>
+								<td>2015-04-12 08:56:00</td>
+								<td>No</td>
+							</tr>
+							
+							<tr>
+								<td>Magical</td>
+								<td>4</td>
+								<td>2015-04-15 08:56:00</td>
+								<td>Yes</td>
+							</tr>
+						</tbody>
+					
+					</table>
+				
+				</div>
+			
+			</div>     
+        </div> 
 
         
 <form>
   
-<h2>Create pallets</h2> 
+<h1>Create pallets</h1> 
     
     
   <fieldset class="form-group">
@@ -198,53 +271,33 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-	
-
-
-
-
-      <div class="page-header">
-        <h1>Available pallets</h1>
+        
+        
+<div class="page-header">
+        <h1>Functions</h1>
       </div>
-      <div class="row">
+      <p>
+        <button type="button" class="btn btn-lg btn-danger">Block pallet</button>
+    
+      </p>
+        
+       <div class="row">
         <div class="col-md-6">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Cookie name</th>
-                <th>ID</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+    		<h1>Search for pallet</h1>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-lg" placeholder="ID" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
         </div>
-      </div>
-
-
-
-      
-
+	</div> 
+        
+	
 
       <div class="page-header">
         <h1>Alerts</h1>
@@ -291,8 +344,7 @@
       <div class="well">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
       </div>
-
-        
+      
 
       <!-- /END THE FEATURETTES -->
 
@@ -305,14 +357,10 @@
 
     </div><!-- /.container -->
 
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.searchable-1.0.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
     <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
@@ -320,4 +368,6 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+
+
 </html>
