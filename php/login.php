@@ -19,6 +19,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 		if ($database->passwordHash($password, $result['salt']) == $result['password']) {
 			$response['error'] = false;
 			$isLogin = true;
+			$_SESSION['username'] = $username;
 		}
 	}
 
