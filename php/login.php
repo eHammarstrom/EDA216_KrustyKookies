@@ -11,20 +11,20 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 	$database = new Database();
 
-	$query = 'SELECT password, salt WHERE username = ?';
+	$query = 'SELECT password, salt FROM users WHERE username = ?';
 	$result = $database->executeQuery($query, array($username));
 
 	$response = [];
 	if ($result != false) {
 		if ($database->passwordHash($password, $result['salt']) == $result['password']) {
-			$response['login'] = true;
+			$response['error'] = false;
 			$isLogin = true;
 		}
 	}
 
 	if ($login == false) {
 		$response = [
-			'login' => false,
+			'error' => true,
 			'msg' => 'Invalid credentials.'
 		];
 	}
@@ -32,7 +32,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	header('Content-Type: application/json');
 	echo json_encode($response);
 } else {
-	$response['blank'] = true;
+	$response = [
+		'error' => true,
+		'msg' => 'Blank fields.'
+	];
 
 	header('Content-Type: application/json');
 	echo json_encode($response);
