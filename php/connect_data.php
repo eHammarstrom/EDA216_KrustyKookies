@@ -1,6 +1,6 @@
 <?php
-	$db_host = "localhost";
-	$db_username = "silly_manager";
-	$db_password = "sillytest123";
-	$db_database = "silly_db";
+	$db_host = "puccini.cs.lth.se";
+	$db_username = "db136";
+	$db_password = "pontus1995";
+	$db_database = "db136";
 ?>
