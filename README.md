@@ -10,6 +10,6 @@
 * Search?
 * Blocking of pallets
 
-#Login/Register
-* An authorized user can log in.
-* Simple registration of a new customer.
+#~~Login/Register~~
+* ~~An authorized user can log in~~.
+* ~~Simple registration of a new customer~~.
