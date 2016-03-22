@@ -1,0 +1,15 @@
+dist/css/bootstrap.min.css
+
+assets/css/ie10-viewport-bug-workaround.css
+
+assets/js/ie-emulation-modes-warning.js
+
+css/carousel.css
+
+assets/js/vendor/jquery.min.js
+
+dist/js/bootstrap.min.js
+
+assets/js/vendor/holder.min.js
+
+assets/js/ie10-viewport-bug-workaround.js
