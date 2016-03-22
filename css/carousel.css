@@ -42,6 +42,9 @@ body {
 
 
 
+
+
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -78,21 +81,49 @@ body {
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  z-index: 10;
+  
 }
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
+  margin: 0 auto;
   background-color: #FFFFFF;
 }
+
+.carousel img {
+position: absolute;
+  height: 500px;
+  width: 500px;
+  max-width: none;
+}
+
 .carousel-inner > .item > img {
   position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
   height: 500px;
 }
+
+div.container {
+ width: 70%; /* for example */
+ margin: 0 auto;
+}
+
+
+.first-slide{
+   float:left;
+   margin-left:36%;
+}
+
+.second-slide{
+float:left;
+margin-left:36%;
+}
+
+.third-slide{
+float:left;
+margin-left:36%;
+}
+
 
 
 /* MARKETING CONTENT
