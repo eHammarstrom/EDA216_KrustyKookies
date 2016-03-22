@@ -36,8 +36,8 @@ CREATE TABLE Users(
 userName varchar(40),
 password varChar(128) NOT NULL,
 salt varChar(16) NOT NULL,
-PRIMARY KEY (userName),
-FOREIGN KEY (userName) REFERENCES Customers (name) ON DELETE CASCADE ON UPDATE CASCADE
+PRIMARY KEY (userName)
+/** FOREIGN KEY (userName) REFERENCES Customers (name) ON DELETE CASCADE ON UPDATE CASCADE */
 );
 
 CREATE TABLE Orders(

@@ -20,14 +20,13 @@
 		<!-- Mixins-->
 		<!-- Pen Title-->
 		<div class="pen-title">
-			<h1>Krusty Kookies</h1><span>The <a href='http://cs.lth.se/eda216/'>Website</a></span>
+			<h1>Krusty Kookies</h1>
 		</div>
-		<div class="rerun"><a href="">Rerun</a></div>
 		<div class="container">
 			<div class="card"></div>
 			<div class="card">
 				<h1 class="title">Login</h1>
-				<form method="post" id="form-login" action="">
+				<form method="post" id="form-login">
 					<div class="input-container">
 						<input type="text" name="username" required="required"/>
 						<label for="username">Username</label>
@@ -42,7 +41,6 @@
 						<button id="btn-login"><span>Go</span></button>
 						<div style="margin-top: 10px; display: none;" id="login-error" class="alert alert-danger"></div>
 					</div>
-					<div class="footer"><a href="#">Forgot your password?</a></div>
 				</form>
 			</div>
 			<div class="card alt">
@@ -50,7 +48,7 @@
 				<h1 class="title">Register
 					<div class="close"></div>
 				</h1>
-				<form method="post">
+				<form method="post" id="form-register">
 					<div class="input-container">
 						<input type="text" id="Username" name="username" required="required"/>
 						<label for="Username">Username</label>
@@ -67,7 +65,8 @@
 						<div class="bar"></div>
 					</div>
 					<div class="button-container">
-						<button><span>Register</span></button>
+						<button id="btn-register"><span>Register</span></button>
+						<div style="margin-top: 10px; display: none;" id="register-error" class="alert alert-danger"></div>
 					</div>
 				</form>
 			</div>

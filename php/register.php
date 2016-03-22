@@ -9,39 +9,41 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['rep_
 	$rep_password = $_POST['rep_password'];
 
 	$database = new Database();
-	$query = 'SELECT username FROM users WHERE username = ?';
-	$database->executeQuery($query, array($username));
+	$query = 'SELECT * FROM users WHERE username = ?';
+	$result = $database->executeQuery($query, array($username));
 
 	$response = [];
-	if (empty($query)) {
+	if (empty($result)) {
 		if ($password == $rep_password) {
 			$query = 'INSERT INTO users VALUES(?, ?, ?)';
-			$salt = mcrypt_create_iv(12);
-			$password = $database->passwordHash($password, $salt);
-			$database->executeQuery($query, array($username, $password, $salt));
+			$salt = base64_encode(mcrypt_create_iv(12));
+			$pwhash = $database->passwordHash($password, $salt);
+			$database->executeQuery($query, array($username, $pwhash, $salt));
 			$response['error'] = false;
-			header('location: ../connectionerror.html');
-			exit;
 		} else {
 			$response = [
 				'error' => true,
 				'msg' => 'Passwords must be equal.'
 			];
 		}
+	} else if (empty($username) || empty($password) || empty($rep_password)) {
+		$response = [
+			'error' => true,
+			'msg' => 'One or more fields blank.'
+		];
 	} else {
 		$response = [
-			'error' =>true,
-			'msg' => 'Username is already taken.'
+			'error' => true,
+			'msg' => 'Username already exists.' . $username . ' ' . $password . ' ' . $rep_password
 		];
 	}
-
 
 	header('Content-Type: application/json');
 	echo json_encode($response);
 } else {
 	$response = [
 		'error' => true,
-		'msg' => 'Blank fields.'
+		'msg' => 'Fatal error, contact administration.'
 	];
 
 	header('Content-Type: application/json');

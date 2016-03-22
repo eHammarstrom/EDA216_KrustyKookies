@@ -15,15 +15,21 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 	$result = $database->executeQuery($query, array($username));
 
 	$response = [];
-	if ($result != false) {
-		if ($database->passwordHash($password, $result['salt']) == $result['password']) {
+	if (!empty($result)) {
+		$pwhash = $database->passwordHash($password, $result[0]['salt']);
+		if ($pwhash == $result[0]['password'])  {
 			$response['error'] = false;
 			$isLogin = true;
 			$_SESSION['username'] = $username;
 		}
 	}
-
-	if ($login == false) {
+	
+	if (empty($username) || empty($password)) {
+		$response = [
+			'error' => true,
+			'msg' => 'One or more blank fields.'
+		];
+	} else if ($isLogin == false) {
 		$response = [
 			'error' => true,
 			'msg' => 'Invalid credentials.'
@@ -35,7 +41,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 } else {
 	$response = [
 		'error' => true,
-		'msg' => 'Blank fields.'
+		'msg' => 'Fatal error, contact administration.'
 	];
 
 	header('Content-Type: application/json');

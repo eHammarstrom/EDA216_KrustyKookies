@@ -11,17 +11,16 @@ $('#btn-login').click(function() {
 	$.ajax({
 		type: 'POST',
 		url: '../php/login.php',
-		data: $('#form-logir').serialize(),
+		data: $('#form-login').serialize(),
 		dataType: 'json',
 		success: function(data) {    
 			if (data.error == true) {
 				console.log('Invalid credentials.');
 				$('#login-error').html(data.msg);
-				//$('#login-error').css('visibility', 'visible');
 				$('#login-error').fadeIn('slow');
 			} else {
 				console.log('Correct credentials.');
-				//window.location.href = '../home.php';
+				window.location.href = '../home.html';
 			}
 		},
 		beforeSend: function() {
@@ -39,7 +38,7 @@ $('#btn-login').click(function() {
 });
 
 $('#btn-register').click(function() {
-	console.log('clicked login button');
+	console.log('clicked register button');
 	$.ajax({
 		type: 'POST',
 		url: '../php/register.php',
@@ -47,10 +46,10 @@ $('#btn-register').click(function() {
 		dataType: 'json',
 		success: function(data) {    
 			if (data.error == true) {
-				$('#login-error').html(data.msg);
-				$('#login-error').css('visibility', 'show');
+				$('#register-error').html(data.msg);
+				$('#register-error').fadeIn('slow');
 			} else {
-				window.location.href = '../home.php';
+				alert('Account created.');
 			}
 		},
 		beforeSend: function() {
@@ -58,6 +57,9 @@ $('#btn-register').click(function() {
 		},
 		complete: function() {
 			$('#btn-register').html('GO');
+		},
+		error: function(exception) {
+			console.log(exception);
 		}
 	});
 	return false;
