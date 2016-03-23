@@ -103,7 +103,7 @@
               <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Production</h1>
-        <p>You can create, search and block pallets. Here you are the source of power.</p>
+        <p>You can search, create and block pallets. Here you are the source of power.</p>
       </div>
         
     <div>   
@@ -214,67 +214,114 @@
 			
 			</div>     
         </div> 
+        
+<h1>Create Pallets</h1> 
+      
+      <br>
+      
+    <div id="calc" class="row text-left">
+        <form class="entry form-group">
+            <div class="form-group">
+                <label>Cookie</label>
+                <div class="form-group">
+                    
+                    <select class="form-control" id="exampleSelect1">
+                        <option>Strawberry</option>
+                        <option>Chocolate</option>
+                        <option>Singoalla</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Number of pallets</label>
+                <select class="form-control" id="exampleSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                    <select class="form-control" id="exampleSelect1">
+                    <option>Date</option>
+                    <option>Date</option>
+                    <option>Date</option>
+                </select>
+            </div> 
+          <button type="submit" class="btn btn-primary btn-add"><span class="glyphicon glyphicon-plus"></span></button>
+        </form>
+    </div>
+        
+    <br>    
+    
+      <button type="submit" class="btn btn-lg btn-primary" value="showAlert" onclick="showAlert();">Submit</button>
+
+    <div class="container" style="display:none;" id="myAlert">
+        <div class="alert alert-success alert-dismissable" id="myAlert2">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Pallets created succesfuly!
+        </div>
+
+    </div>
+        
+<script>
+        
+function showAlert(){
+  if($("#myAlert").find("div#myAlert2").length==0){
+    $("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button>Created pallets succesfully!</div>");
+  }
+  $("#myAlert").css("display", "");
+}
+    
+</script>        
+        
+        
+        
+<script>
+
+$(function()
+{   var i=1;
+    $('#calc:first').find('.input-group-addon').html(i);
+    $(document).on('click', '.btn-add', function(e)
+    {
+        e.preventDefault();
+
+        var controlForm = $('#calc:first'),
+            currentEntry = $(this).parent('.entry:first'),
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+            $(newEntry).find('.input-group-addon').html(++i);
+
+        newEntry.find('input').val('');
+        controlForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span class="glyphicon glyphicon-minus"></span>');
+    }).on('click', '.btn-remove', function(e)
+    {   i--;
+        $(this).parent().nextAll('.entry').each(function() {
+            $(this).find('.input-group-addon').html($(this).find('.input-group-addon').html()-1); 
+        });
+		$(this).parents('.entry:first').remove();	
 
         
-<form>
-  
-<h1>Create pallets</h1> 
-    
-    
-  <fieldset class="form-group">
-    <label for="exampleSelect1">Cookie</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>Strawberry</option>
-      <option>Chocolate</option>
-      <option>Singoalla</option>
-    </select>
-  </fieldset> 
-             
-  <fieldset class="form-group">
-    <label for="exampleSelect1">Number of pallets</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-      <option>6</option>
-      <option>7</option>
-      <option>8</option>
-      <option>9</option>
-      <option>10</option>
-    </select>
-  </fieldset>
-      <fieldset class="form-group">
-    <label for="exampleSelect1">Delivery date</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>Date</option>
-      <option>Date</option>
-      <option>Date</option>
-    </select>
-  </fieldset>
 
-  <fieldset class="form-group">
-    <label for="exampleSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </fieldset>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+		e.preventDefault();
+		return false;
+	});
+});
+  
+</script>      
         
         
 <div class="page-header">
-        <h1>Functions</h1>
+        <h1>Block Pallet</h1>
       </div>
       <p>
         <button type="button" class="btn btn-lg btn-danger">Block pallet</button>
