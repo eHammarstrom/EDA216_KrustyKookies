@@ -39,9 +39,35 @@ class Database {
 		}
 		return $result;
 	}
+    
+    private function executeUpdate($query, $param = null) {
+		try {
+			$stmt = $this->conn->prepare($query);
+  			$stmt->execute($param);
+  			$rows = $stmt->rowCount();
+  		} catch (PDOException $e) {
+			$error = "*** Internal error: " . $e->getMessage() . "<p>" . $query;
+			die($error);
+		}
+		return $rows;
+	}
 
 	public function passwordHash($password, $salt) {
 		return hash("SHA512", $salt . $password);
+	}
+    
+    public function getPallets() {
+        $sql="SELECT * FROM pallets";
+        $result = $this->executeQuery($sql);
+        
+        foreach($result as $res) {
+            $pallets["barcode"] = $res["barcode"];
+            $pallets["blocked"] = $res["blocked"];
+            $pallets["dateCreated"] = $res["dateCreated"];
+            $pallets["cookie"] = $res["cookie"];
+        }
+        
+        return pallets;
 	}
 }
 

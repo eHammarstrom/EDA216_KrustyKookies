@@ -64,7 +64,7 @@ $cookies = $database->executeQuery($query);
 			  <ul class="nav navbar-nav">
 				<li><a href="home.html">Home</a></li>
 				<li class="active"><a href="#">Cookies</a></li>
-				<li><a href="#production">Production</a></li>
+				<li><a href="production.php">Production</a></li>
 				<li><a href="#orders">Orders</a></li>
 				<li><a href="#contact">Contact</a></li>
 				<li class="dropdown">
@@ -140,6 +140,13 @@ $cookies = $database->executeQuery($query);
 	</div><!-- /.carousel -->
 
 	<div class="container cookies">
+        
+    
+   <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Cookies</h1>
+        <p>Here you can find our magical recipes.</p>
+      </div>    
 
 <?php
 
