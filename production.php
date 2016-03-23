@@ -269,12 +269,14 @@ $pallets = $database->executeQuery($query);
       <br>
       
     <div id="calc" class="row text-left">
-        <form class="entry form-group">
+        <form class="entry form-group" method="post" id="formCreatePallet">
             <div class="form-group">
                 <label>Cookie</label>
                 <div class="form-group">
                     
-                    <select class="form-control" id="exampleSelect1">
+                    <input type="hidden" name="action" value="submit" />
+                    
+                    <select class="form-control" id="cookie" name="cookie">
                         <option>Nut cookie</option>
                         <option>Nut ring</option>
                         <option>Amneris</option>
@@ -283,7 +285,7 @@ $pallets = $database->executeQuery($query);
             </div>
             <div class="form-group">
                 <label>Number of pallets</label>
-                <select class="form-control" id="exampleSelect1">
+                <select class="form-control" id="numberOfPallets" name="numberOfPallets">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -296,21 +298,50 @@ $pallets = $database->executeQuery($query);
                     <option>10</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Date</label>
-                    <select class="form-control" id="exampleSelect1">
-                    <option>Date</option>
-                    <option>Date</option>
-                    <option>Date</option>
-                </select>
-            </div> 
-          <button type="submit" class="btn btn-primary btn-add"><span class="glyphicon glyphicon-plus"></span></button>
+           
+            <button type="submit" class="btn btn-lg btn-primary" value="Submit"  id="createPallet">Submit</button>
+            
         </form>
     </div>
+      
+    <script>
+      
+    $('#createPallet').click(function() {
+	console.log('clicked create button');
+	$.ajax({
+		type: 'POST',
+		url: '../php/createPallet.php',
+		data: $('#formCreatePallet').serialize(),
+		dataType: 'json',
+		success: function(data) {    
+			if (data.error == true) {
+                 alert(data.msg);
+			} else {
+			     alert(data.msg);
+			}
+		},
+        
+		beforeSend: function() {
+
+		},
+		complete: function() {
+			// alert('ajax call completed');
+		},
+		error: function(exception) {
+			// alert("error" . exception);
+		}
+	});
+	return false;
+});
+
+        
+    </script>  
+      
+      
         
     <br>    
     
-      <button type="submit" class="btn btn-lg btn-primary" value="showAlert" onclick="showAlert();">Submit</button>
+
 
     <div class="container" style="display:none;" id="myAlert">
         <div class="alert alert-success alert-dismissable" id="myAlert2">
@@ -319,7 +350,7 @@ $pallets = $database->executeQuery($query);
         </div>
 
     </div>
-        
+            
 <script>
         
 function showAlert(){

@@ -69,6 +69,16 @@ class Database {
         
         return pallets;
 	}
+    
+    public function createPallets($cookie) {
+        
+        $blocked = 0;
+        $dateCreated = "2016-03-01";
+
+        $sql = "INSERT INTO pallets(blocked, dateCreated, cookie) VALUES(?,?,?)";
+        $result = $this->executeUpdate($sql, array($blocked, $dateCreated, $cookie));
+
+    }
 }
 
 ?>
