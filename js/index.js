@@ -17,7 +17,8 @@ $('#btn-login').click(function() {
 			if (data.error == true) {
 				console.log('Invalid credentials.');
 				$('#login-error').html(data.msg);
-				$('#login-error').fadeIn('slow');
+				$('#login-error').fadeIn(1000);
+				$('#login-error').fadeOut(3000);
 			} else {
 				console.log('Correct credentials.');
 				window.location.href = '../home.php';
@@ -47,10 +48,12 @@ $('#btn-register').click(function() {
 		success: function(data) {    
 			if (data.error == true) {
 				$('#register-error').html(data.msg);
-				$('#register-error').fadeIn('slow');
+				$('#register-error').fadeIn(1000);
+				$('#register-error').fadeOut(3000);
 			} else {
 				$('#register-success').html(data.msg);
-				$('#register-success').fadeIn('slow');
+				$('#register-success').fadeIn(1000);
+				$('#register-success').fadeOut(3000);
 			}
 		},
 		beforeSend: function() {

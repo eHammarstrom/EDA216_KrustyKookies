@@ -37,7 +37,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['rep_
 	} else {
 		$response = [
 			'error' => true,
-			'msg' => 'Username already exists.' . $username . ' ' . $password . ' ' . $rep_password
+			'msg' => 'Username already exists.'
 		];
 	}
 

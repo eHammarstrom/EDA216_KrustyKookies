@@ -71,9 +71,9 @@ $pallets = $database->executeQuery($query);
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="home.php">Home</a></li>
                 <li><a href="cookies.php">Cookies</a></li>
-                <li><a href="production.php">Production</a></li>
+                <li class="active"><a href="production.php">Production</a></li>
                 <li><a href="#orders">Orders</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
