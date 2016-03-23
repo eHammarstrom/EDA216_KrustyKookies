@@ -20,7 +20,7 @@ $('#btn-login').click(function() {
 				$('#login-error').fadeIn('slow');
 			} else {
 				console.log('Correct credentials.');
-				window.location.href = '../home.html';
+				window.location.href = '../home.php';
 			}
 		},
 		beforeSend: function() {
@@ -49,7 +49,8 @@ $('#btn-register').click(function() {
 				$('#register-error').html(data.msg);
 				$('#register-error').fadeIn('slow');
 			} else {
-				alert('Account created.');
+				$('#register-success').html(data.msg);
+				$('#register-success').fadeIn('slow');
 			}
 		},
 		beforeSend: function() {

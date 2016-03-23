@@ -19,7 +19,10 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['rep_
 			$salt = base64_encode(mcrypt_create_iv(12));
 			$pwhash = $database->passwordHash($password, $salt);
 			$database->executeQuery($query, array($username, $pwhash, $salt));
-			$response['error'] = false;
+			$response = [
+				'error' => false,
+				'msg' => 'Account created.'
+			];
 		} else {
 			$response = [
 				'error' => true,
