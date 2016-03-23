@@ -20,7 +20,7 @@ PRIMARY KEY (cookieName)
 CREATE TABLE Pallets(
 barcode int AUTO_INCREMENT,
 blocked boolean NOT NULL,
-dateCreated DateTime NOT NULL,
+dateCreated DateTime NOT NULL DEFAULT NOW(),
 cookie varChar(40),
 PRIMARY KEY (barcode),
 FOREIGN KEY (cookie) REFERENCES Cookies (cookieName)
