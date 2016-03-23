@@ -24,20 +24,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 		}
 	}
 	
-	if (empty($username) || empty($password)) {
-		$response = [
-			'error' => true,
-			'msg' => 'One or more blank fields.'
-		];
-	} else if ($isLogin == false) {
-		$response = [
-			'error' => true,
-			'msg' => 'Invalid credentials.'
-		];
-	}
-
-	header('Content-Type: application/json');
-	echo json_encode($response);
 } else {
 	$response = [
 		'error' => true,
