@@ -41,10 +41,6 @@ body {
 }
 
 
-
-
-
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -102,9 +98,6 @@ position: absolute;
   position: absolute;
   height: 500px;
 }
-
-
-
 
 .first-slide{
    float:left;
