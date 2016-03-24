@@ -9,14 +9,11 @@ require_once('database.php');
         $numberOfPallets = $_POST['numberOfPallets'];
 
         $database = new Database();
-          
-          
         $blocked = 0;
-        $dateCreated = "2016-03-01";
           
           for($i = 0; $i < $numberOfPallets; $i++) {
-              $sql = "INSERT INTO pallets(blocked, dateCreated, cookie) VALUES(?,?,?)";
-              $database->executeQuery($sql, array($blocked, $dateCreated, $cookie));  
+              $sql = "INSERT INTO pallets(blocked, cookie) VALUES(?,?)";
+              $database->executeQuery($sql, array($blocked, $cookie));  
           }
           
           $response = [

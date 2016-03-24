@@ -96,7 +96,7 @@ position: absolute;
 
 .carousel-inner > .item > img {
   position: absolute;
-  height: 500px;
+  height: 500px; 
 }
 
 .first-slide{

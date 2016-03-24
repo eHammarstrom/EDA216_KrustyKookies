@@ -40,9 +40,9 @@ class Database {
 		return $result;
 	}
     
-    private function executeUpdate($query, $param = null) {
+    public function executeUpdate($query, $param = null) {
 		try {
-			$stmt = $this->conn->prepare($query);
+			$stmt = $this->getConnection()->prepare($query);
   			$stmt->execute($param);
   			$rows = $stmt->rowCount();
   		} catch (PDOException $e) {
