@@ -1,4 +1,4 @@
-set foreign_key_checks = 0;
+SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS Pallets;
 DROP TABLE IF EXISTS Cookies;
 DROP TABLE IF EXISTS Customers;
@@ -13,75 +13,75 @@ SET foreign_key_checks = 1;
 /**Table creation*/
 
 CREATE TABLE Cookies(
-cookieName varchar(40),
-PRIMARY KEY (cookieName)
+	cookieName varchar(40),
+	PRIMARY KEY (cookieName)
 );
 
 CREATE TABLE Pallets(
-barcode int AUTO_INCREMENT,
-blocked boolean NOT NULL,
-dateCreated DateTime NOT NULL DEFAULT NOW(),
-cookie varChar(40),
-PRIMARY KEY (barcode),
-FOREIGN KEY (cookie) REFERENCES Cookies (cookieName)
+	barcode int AUTO_INCREMENT,
+	blocked boolean NOT NULL,
+	dateCreated DateTime NOT NULL DEFAULT NOW(),
+	cookie varChar(40),
+	PRIMARY KEY (barcode),
+	FOREIGN KEY (cookie) REFERENCES Cookies (cookieName)
 );
 
 CREATE TABLE Customers(
-name varchar(30),
-address varchar(40),
-PRIMARY KEY (name)
+	name varchar(30),
+	address varchar(40),
+	PRIMARY KEY (name)
 );
 
 CREATE TABLE Users(
-userName varchar(40),
-password varChar(128) NOT NULL,
-salt varChar(16) NOT NULL,
-PRIMARY KEY (userName)
-/** FOREIGN KEY (userName) REFERENCES Customers (name) ON DELETE CASCADE ON UPDATE CASCADE */
+	userName varchar(40),
+	password varChar(128) NOT NULL,
+	salt varChar(16) NOT NULL,
+	PRIMARY KEY (userName)
+	/** FOREIGN KEY (userName) REFERENCES Customers (name) ON DELETE CASCADE ON UPDATE CASCADE */
 );
 
 CREATE TABLE Orders(
-id int AUTO_INCREMENT,
-customerName varchar(40),
-cookieName varchar(40),
-deliveryDate DateTime NOT NULL,
-PRIMARY KEY (id),
-FOREIGN KEY (cookieName) REFERENCES Cookies (cookieName),
-FOREIGN KEY (customerName) REFERENCES Customers (name)
+	id int AUTO_INCREMENT,
+	customerName varchar(40),
+	cookieName varchar(40),
+	deliveryDate DateTime NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (cookieName) REFERENCES Cookies (cookieName),
+	FOREIGN KEY (customerName) REFERENCES Customers (name)
 );
 
 CREATE TABLE Units(
-unit varchar(5),
-PRIMARY KEY (unit)
+	unit varchar(5),
+	PRIMARY KEY (unit)
 );
 
 CREATE TABLE Ingredients(
-ingredientName varchar(30),
-currentAmount double,
-dateLastDelivered DateTime NOT NULL,
-unit varchar(5),
-PRIMARY KEY (ingredientName),
-FOREIGN KEY (unit) REFERENCES Units (unit)
+	ingredientName varchar(30),
+	currentAmount double,
+	dateLastDelivered DateTime NOT NULL,
+	unit varchar(5),
+	PRIMARY KEY (ingredientName),
+	FOREIGN KEY (unit) REFERENCES Units (unit)
 );
 
 CREATE TABLE CookieIngredients(
-cookieName varchar(40),
-ingredientName varchar(30),
-ingredientAmount double NOT NULL CHECK (ingredientAmount > 0),
-unit varchar(5),
-PRIMARY KEY (cookieName, ingredientName),
-FOREIGN KEY (cookieName) REFERENCES Cookies (cookieName) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY (ingredientName) REFERENCES Ingredients (ingredientName) ON DELETE CASCADE ON UPDATE CASCADE,
-FOREIGN KEY (unit) REFERENCES Units (unit)
+	cookieName varchar(40),
+	ingredientName varchar(30),
+	ingredientAmount double NOT NULL CHECK (ingredientAmount > 0),
+	unit varchar(5),
+	PRIMARY KEY (cookieName, ingredientName),
+	FOREIGN KEY (cookieName) REFERENCES Cookies (cookieName) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (ingredientName) REFERENCES Ingredients (ingredientName) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (unit) REFERENCES Units (unit)
 );
 
 CREATE TABLE Delivered(
-barcode int,
-customerName varchar(40),
-receivedDate DateTime NOT NULL,
-PRIMARY KEY (barcode),
-FOREIGN KEY (barcode) REFERENCES Pallets (barcode),
-FOREIGN KEY (customerName) REFERENCES Customers (name)
+	barcode int,
+	customerName varchar(40),
+	receivedDate DateTime NOT NULL,
+	PRIMARY KEY (barcode),
+	FOREIGN KEY (barcode) REFERENCES Pallets (barcode),
+	FOREIGN KEY (customerName) REFERENCES Customers (name)
 );
 
 /**Units*/
