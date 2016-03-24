@@ -5,15 +5,7 @@ if (!isset($_SESSION['username'])) {
 	die(header('location: index.html'));
 }
 
-require_once('php/database.php');
-$database = new Database();
-$query = 'SELECT * FROM cookies';
-$cookies = $database->executeQuery($query);
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,10 +59,10 @@ $cookies = $database->executeQuery($query);
 			<div id="navbar" class="navbar-collapse collapse">
 			  <ul class="nav navbar-nav">
 				<li><a href="home.php">Home</a></li>
-				<li class="active"><a href="#">Cookies</a></li>
+                  <li><a href="cookies.php">Cookies</a></li>
 				<li><a href="production.php">Production</a></li>
 				<li><a href="orders.php">Orders</a></li>
-				<li><a href="contact.php">Contact</a></li>
+                  <li class="active"><a href="contact.php">Contact</a></li>
 			  </ul>
                  <ul class="nav navbar-nav navbar-right">
                     <li><a href="php/logout.php">Logout</a></li>
@@ -132,78 +124,52 @@ $cookies = $database->executeQuery($query);
 		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
 	  </a>
-	</div><!-- /.carousel -->
-
+	</div><!-- /.carousel -->      
+      
 	<div class="container cookies">
         
     
    <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Cookies</h1>
-        <p>Here you can find our magical recipes.</p>
+        <h1>Contact</h1>
+        <p>Here are the three musketeers of Krusty Kookies AB.</p>
       </div>    
+        
+        <hr class="featurette-divider">
+        
+          <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="images/emil.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Emil Hammarström</h2>
+          <p><strong>Position:</strong> Developer, security</p>
+          <p><strong>Email:</strong> Dic14eh2@student.lu.se</p>
+          <p><strong>Phone number:</strong> 073-656 80 82</p>
+          <p><strong>Favourite cookie:</strong> Singoalla</p>
+<!--          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="images/pontus.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>Pontus Ovhagen</h2>
+          <p><strong>Position:</strong> Developer, back-end</p>
+          <p><strong>Email:</strong> Dic14pov@student.lu.se</p>
+          <p><strong>Phone number:</strong> 073-386 42 37</p>
+          <p><strong>Favourite cookie:</strong> Kvarg-cookie</p>
+<!--          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+          <h2>Adam Thuvesen</h2>
+          <p><strong>Position:</strong> Developer, front-end</p>
+          <p><strong>Email:</strong> Dic14ath@student.lu.se</p>
+          <p><strong>Phone number:</strong> 070-775 05 92</p>
+          <p><strong>Favourite cookie:</strong> Ballerina</p>
+<!--          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->    
 
-<?php
-
-foreach ($cookies as $cookie) {
-	$query = 'SELECT * FROM cookieingredients WHERE cookiename = ?';
-	$ingredients = $database->executeQuery($query, array($cookie['cookieName']));
-
-	print '<h3>' . $cookie['cookieName'] . ' <small>Best choice.</small></h3>';
-	print '<table class="table table-striped">';
-	print '<thead>';
-	print '<tr>';
-	print '<th>Ingredient</th>';
-	print '<th>Amount</th>';
-	//print '<th>Unit</th>';
-	print '</tr>';
-	print '</thead>';
-	print '<tbody>';
-	foreach ($ingredients as $ingredient) {
-		print '<tr>';
-		print '<td>' . $ingredient['ingredientName'] . '</td>';
-		print '<td>' . $ingredient['ingredientAmount'] . ' ' . $ingredient['unit'] . '</td>';
-		//print '<td>' . $ingredient['unit'] . '</td>';
-		print '</tr>';
-	}
-	print '</tbody>';
-	print '</table>';
-}
-
-?>
-
-<!-- EXAMPLE FOR FUTURE USE
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Username</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th scope=row>1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope=row>2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-			</tr>
-			<tr>
-				<th scope=row>3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-			</tr>
-		</tbody>
-	</table>
--->
+        <hr class="featurette-divider">
+        
 
 	  <!-- FOOTER -->
 	  <footer>
