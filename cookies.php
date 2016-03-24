@@ -167,7 +167,7 @@ foreach ($cookies as $cookie) {
 	foreach ($ingredients as $ingredient) {
 		print '<tr>';
 		print '<td>' . $ingredient['ingredientName'] . '</td>';
-		print '<td>' . $ingredient['ingredientAmount'] . $ingredient['unit'] . '</td>';
+		print '<td>' . $ingredient['ingredientAmount'] . ' ' . $ingredient['unit'] . '</td>';
 		//print '<td>' . $ingredient['unit'] . '</td>';
 		print '</tr>';
 	}
