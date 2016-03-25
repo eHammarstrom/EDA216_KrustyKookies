@@ -126,7 +126,7 @@ if (!isset($_SESSION['username'])) {
 		   </a>
 	   </div><!-- /.carousel -->      
 
-	   <div class="container cookies">
+	   <div class="container marketing">
 
 
 		   <!-- Main jumbotron for a primary marketing message or call to action -->
