@@ -426,7 +426,8 @@ $('#createPallet').click(function () {
 				<div class="form-group">
 					<label>From</label>
 					<select class="form-control" id="startDate" name="startDate">
-						<option>2016-03-25</option>
+						<option>2016-03-26</option>
+                        <option>2016-03-25</option>
 						<option>2016-03-24</option>
 						<option>2016-03-23</option>
 						<option>2016-03-22</option>
@@ -443,6 +444,7 @@ $('#createPallet').click(function () {
 				<div class="form-group">
 					<label>Until</label>
 					<select class="form-control" id="endDate" name="endDate">
+                        <option>2016-03-26</option>
 						<option>2016-03-25</option>
 						<option>2016-03-24</option>
 						<option>2016-03-23</option>
@@ -489,12 +491,11 @@ function showAlertBlocked() {
 function showAlertErrorBlocked() {
 	$("#myAlertBlock").append("<div class='alert alert-danger alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Block failed!</strong> Invalid input or no pallets of the spcified cookie have been created between those dates.</div>");
 
-	$("#myAlertBlock").fadeTo(2500, 500).slideUp(500, function () {
+	$("#myAlertBlock").fadeTo(3500, 500).slideUp(500, function () {
 		$("#myAlertBlock").alert('close');
 	});
-
-
-	setTimeout(function () {
+    
+    setTimeout(function () {
 		window.location.reload();
 	}, 3000);
 

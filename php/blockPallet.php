@@ -10,7 +10,7 @@ if (isset($_POST["cookie"]) && isset($_POST["startDate"]) && isset($_POST["endDa
 
 	$database = new Database();
 
-	if($startDate > $endDate) {
+	if($startDate >= $endDate) {
 		$response = [
 			'error' => true,
 			'msg' => 'startDate > endDate.'
