@@ -1,0 +1,27 @@
+/* === Facts Section === */
+.facts-section {
+    background: url(../../assets/images/counter-bg.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;  
+}
+
+.tt-overlay-bg {
+    background: rgba(26, 30, 35, 0.85);
+    padding: 110px 0;
+}
+
+.count-wrap i {
+    font-size: 64px;
+    margin-bottom: 25px;
+}
+.count-wrap h3 {
+    font-size: 50px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+.count-wrap p {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
