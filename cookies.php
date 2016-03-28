@@ -24,7 +24,7 @@ $cookies = $database->executeQuery($query);
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="../../favicon.ico">
+        <link rel="icon" href="images/cookie1.png">
 
 		<title>Krusty Kookies</title>
 
@@ -148,7 +148,8 @@ $cookies = $database->executeQuery($query);
 foreach ($cookies as $cookie) {
 	$query = 'SELECT * FROM cookieingredients WHERE cookiename = ?';
 	$ingredients = $database->executeQuery($query, array($cookie['cookieName']));
-
+    
+    print '<hr class="featurette-divider">';
 	print '<h3>' . $cookie['cookieName'] . ' <small>Best choice.</small></h3>';
 	print '<table class="table table-striped">';
 	print '<thead>';
@@ -170,6 +171,8 @@ foreach ($cookies as $cookie) {
 	print '</table>';
 }
 
+print '<hr class="featurette-divider">';           
+           
 ?>
 
 		  <!-- EXAMPLE FOR FUTURE USE
