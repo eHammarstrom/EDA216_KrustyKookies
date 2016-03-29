@@ -71,7 +71,9 @@ class Database {
 	}
 	
 	/*Checks that there are enough ingredients to create one pallet of a cookie.
-	  Returns the credentials of the ingredients for updating storage.*/
+	  Returns the credentials of the ingredients for updating storage.
+	  A pallet contains 5400 cookies which gives us the factor 54 for 100 cookie recipes.
+	  */
 	
 	private function checkIngredients($cookie){
 		$sql = "SELECT ingredientName, ingredientAmount, currentAmount FROM cookieingredients NATURAL JOIN ingredients WHERE cookieName = ? FOR UPDATE";
@@ -99,7 +101,7 @@ class Database {
 		
 		if($ingredientCheck < 0){	
 				$this->conn->rollBack();
-				return -1;
+				return false;
 			}
 
 		$this->conn->commit();
@@ -108,7 +110,7 @@ class Database {
 			$sql = "UPDATE ingredients SET currentAmount = (currentAmount - (?*54)) WHERE ingredientName = ?";
 			$update = $this->executeUpdate($sql, array($credentials['ingredientAmount'], $credentials['ingredientName']));			
 		}
-		return 1;
+		return true;
     }
 }
 
