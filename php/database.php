@@ -69,15 +69,46 @@ class Database {
         
         return pallets;
 	}
-    
+	
+	/*Checks that there are enough ingredients to create one pallet of a cookie.
+	  Returns the credentials of the ingredients for updating storage.*/
+	
+	private function checkIngredients($cookie){
+		$sql = "SELECT ingredientName, ingredientAmount, currentAmount FROM cookieingredients NATURAL JOIN ingredients WHERE cookieName = ? FOR UPDATE";
+		$dbResult = $this->executeQuery($sql, array($cookie));
+	
+		foreach($dbResult as $row){
+			if(($row['ingredientAmount']*54) > $row['currentAmount']){
+				return -1;
+			}
+		}	
+		return $dbResult;
+	}
+
     public function createPallets($cookie) {
+		$blocked = 0;
         
-        $blocked = 0;
-        $dateCreated = "2016-03-01";
+		$this->conn->beginTransaction();
+			
+		$sql = "INSERT INTO pallets(blocked, cookie) VALUES(?,?)";
+			
+		/*Default dateCreated. Column left blank for default value.*/
+		$result = $this->executeUpdate($sql, array($blocked, $cookie));
+		
+		$ingredientCheck = $this->checkIngredients($cookie);
+		
+		if($ingredientCheck < 0){	
+				$this->conn->rollBack();
+				return -1;
+			}
 
-        $sql = "INSERT INTO pallets(blocked, dateCreated, cookie) VALUES(?,?,?)";
-        $result = $this->executeUpdate($sql, array($blocked, $dateCreated, $cookie));
-
+		$this->conn->commit();
+		
+		foreach($ingredientCheck as $credentials){
+			$sql = "UPDATE ingredients SET currentAmount = (currentAmount - (?*54)) WHERE ingredientName = ?";
+			$update = $this->executeUpdate($sql, array($credentials['ingredientAmount'], $credentials['ingredientName']));			
+		}
+		return 1;
     }
 }
 
