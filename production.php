@@ -10,6 +10,11 @@ $database = new Database();
 $query = 'SELECT * FROM pallets';
 $pallets = $database->executeQuery($query);
 
+	/*
+	$cookie1 = 'Nut ring';
+	$database->createPallets($cookie1);
+	*/
+
 ?>
 
 <!DOCTYPE html>
@@ -253,6 +258,7 @@ if (is_array($pallets)) {
 		print '<td>' . $pallet['blocked'] . '</td>';
 		print '</tr>';
 	}
+
 }
 ?>
 
