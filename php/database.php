@@ -57,17 +57,17 @@ class Database {
 	}
     
     public function getPallets() {
-        $sql="SELECT * FROM pallets";
+        $sql = "SELECT * FROM pallets";
         $result = $this->executeQuery($sql);
-        
-        foreach($result as $res) {
-            $pallets["barcode"] = $res["barcode"];
-            $pallets["blocked"] = $res["blocked"];
-            $pallets["dateCreated"] = $res["dateCreated"];
-            $pallets["cookie"] = $res["cookie"];
-        }
-        
-        return pallets;
+
+        return $result;
+	}
+
+	public function getCookies() {
+		$sql = "SELECT * FROM cookies";
+		$result = $this->executeQuery($sql);
+
+		return $result;
 	}
 	
 	/*Checks that there are enough ingredients to create one pallet of a cookie.
@@ -116,13 +116,22 @@ class Database {
 	public function blockPallets($startDate, $endDate, $cookie) {
 		$this->getConnection()->beginTransaction();
 
+		$fixedStartDate = date("Y-m-d H:i:s", strtotime($startDate));
+		$fixedEndDate = date("Y-m-d H:i:s", strtotime($endDate." +23 hours +59 minutes +59 seconds"));
+
 		$sql = "UPDATE pallets SET blocked = 1 WHERE dateCreated BETWEEN ? AND ? AND cookie = ?";
 
-		$rows = $this->executeUpdate($sql, array($startDate, $endDate, $cookie));
+		$rows = $this->executeUpdate($sql, array($fixedStartDate, $fixedEndDate, $cookie));
 
 		$this->getConnection()->commit();
 
 		return $rows;
+	}
+
+	public function getPalletDates() {
+		$sql = "SELECT DISTINCT DATE_FORMAT(dateCreated, '%Y-%m-%d') as dateCreated FROM pallets";
+		$result = $this->executeQuery($sql);
+		return $result;
 	}
 }
 

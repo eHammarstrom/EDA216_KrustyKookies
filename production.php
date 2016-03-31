@@ -6,14 +6,8 @@ if (!isset($_SESSION['username'])) {
 }
 
 require_once('php/database.php');
-$database = new Database();
-$query = 'SELECT * FROM pallets';
-$pallets = $database->executeQuery($query);
 
-	/*
-	$cookie1 = 'Nut ring';
-	$database->createPallets($cookie1);
-	 */
+$database = new Database();
 
 ?>
 
@@ -242,7 +236,9 @@ $(document).ready(function () {
 
 <?php 
 
-if (is_array($pallets)) {
+$pallets = $database->getPallets();
+
+if (!empty($pallets)) {
 	foreach ($pallets as $pallet) {
 
 		if(strcmp($pallet['blocked'], "0") == 0) {
@@ -317,9 +313,19 @@ $(function () {
 						<input type="hidden" name="action" value="submit" />
 
 						<select class="form-control" id="cookie" name="cookie">
-							<option>Nut cookie</option>
-							<option>Nut ring</option>
-							<option>Amneris</option>
+<?php
+
+$cookies = $database->getCookies();
+
+if (!empty($cookies)) {
+	foreach ($cookies as $cookie) {
+		print '<option>';
+		print $cookie['cookieName'];
+		print '</option>';
+	}
+}
+
+?>
 						</select>
 					</div>
 				</div>
@@ -423,46 +429,48 @@ $('#createPallet').click(function () {
 						<input type="hidden" name="action" value="submit" />
 
 						<select class="form-control" id="cookie" name="cookie">
-							<option>Nut cookie</option>
-							<option>Nut ring</option>
-							<option>Amneris</option>
+<?php
+
+if (!empty($cookies)) {
+	foreach ($cookies as $cookie) {
+		print '<option>';
+		print $cookie['cookieName'];
+		print '</option>';
+	}
+}
+
+?>
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
 					<label>From</label>
 					<select class="form-control" id="startDate" name="startDate">
-						<option>2016-03-26</option>
-						<option>2016-03-25</option>
-						<option>2016-03-24</option>
-						<option>2016-03-23</option>
-						<option>2016-03-22</option>
-						<option>2016-03-21</option>
-						<option>2016-03-20</option>
-						<option>2016-03-19</option>
-						<option>2016-03-18</option>
-						<option>2016-03-17</option>
-						<option>2016-03-16</option>
-						<option>2016-03-15</option>
-						<option>2016-03-14</option>
+<?php
+
+$palletDates = $database->getPalletDates();
+
+foreach($palletDates as $palletDate) {
+	echo '<option>';
+	echo $palletDate['dateCreated'];
+	echo '</option>';
+}
+
+?>
 					</select>
 				</div>
 				<div class="form-group">
 					<label>Until</label>
 					<select class="form-control" id="endDate" name="endDate">
-						<option>2016-03-26</option>
-						<option>2016-03-25</option>
-						<option>2016-03-24</option>
-						<option>2016-03-23</option>
-						<option>2016-03-22</option>
-						<option>2016-03-21</option>
-						<option>2016-03-20</option>
-						<option>2016-03-19</option>
-						<option>2016-03-18</option>
-						<option>2016-03-17</option>
-						<option>2016-03-16</option>
-						<option>2016-03-15</option>
-						<option>2016-03-14</option>
+<?php
+
+foreach($palletDates as $palletDate) {
+	echo '<option>';
+	echo $palletDate['dateCreated'];
+	echo '</option>';
+}
+
+?>
 					</select>
 				</div>
 
@@ -470,11 +478,7 @@ $('#createPallet').click(function () {
 
 				<div class="container" style="display:none;" id="myAlertBlock">
 					<h2> </h2>
-
 				</div>
-
-<script>
-</script>
 
 <script>
 function showAlertBlocked(message) {
