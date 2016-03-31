@@ -10,18 +10,18 @@ if (isset($_POST["cookie"]) && isset($_POST["startDate"]) && isset($_POST["endDa
 
 	$database = new Database();
 
-	if($startDate >= $endDate) {
+	if($startDate > $endDate) {
 		$response = [
 			'error' => true,
 			'msg' => 'startDate > endDate.'
 		];
 	} else {
-		$sql = "UPDATE pallets SET blocked = 1 WHERE dateCreated BETWEEN ? AND ? AND cookie = ?";  
-		$database->executeQuery($sql, array($startDate, $endDate, $cookie));
+		
+		$rows = $database->blockPallets($startDate, $endDate, $cookie);
 
 		$response = [
 			'error' => false,
-			'msg' => 'Success.'
+			'msg' => 'Success. '.$rows.' row(s) blocked.'
 		];     
 	}          
 

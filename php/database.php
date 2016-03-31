@@ -87,10 +87,10 @@ class Database {
 		return $dbResult;
 	}
 
-    public function createPallets($cookie) {
+    public function createPallet($cookie) {
 		$blocked = 0;
-        
-		$this->conn->beginTransaction();
+
+		$this->getConnection()->beginTransaction();
 			
 		$sql = "INSERT INTO pallets(blocked, cookie) VALUES(?,?)";
 			
@@ -100,11 +100,11 @@ class Database {
 		$ingredientCheck = $this->checkIngredients($cookie);
 		
 		if($ingredientCheck < 0){	
-				$this->conn->rollBack();
+				$this->getConnection()->rollBack();
 				return false;
 			}
 
-		$this->conn->commit();
+		$this->getConnection()->commit();
 		
 		foreach($ingredientCheck as $credentials){
 			$sql = "UPDATE ingredients SET currentAmount = (currentAmount - (?*54)) WHERE ingredientName = ?";
@@ -112,6 +112,19 @@ class Database {
 		}
 		return true;
     }
+
+	public function blockPallets($startDate, $endDate, $cookie) {
+		$this->getConnection()->beginTransaction();
+
+		$sql = "UPDATE pallets SET blocked = 1 WHERE dateCreated BETWEEN ? AND ? AND cookie = ?";
+
+		$rows = $this->executeUpdate($sql, array($startDate, $endDate, $cookie));
+
+		$this->getConnection()->commit();
+
+		return $rows;
+	}
 }
+
 
 ?>

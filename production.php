@@ -13,7 +13,7 @@ $pallets = $database->executeQuery($query);
 	/*
 	$cookie1 = 'Nut ring';
 	$database->createPallets($cookie1);
-	*/
+	 */
 
 ?>
 
@@ -27,7 +27,7 @@ $pallets = $database->executeQuery($query);
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-        <link rel="icon" href="images/cookie1.png">
+		<link rel="icon" href="images/cookie1.png">
 
 		<title>Krusty Kookies</title>
 
@@ -347,8 +347,8 @@ $(function () {
 				</div>
 
 <script>
-function showAlert() {
-	$("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Pallets created succesfully!</strong> Have a nice day sir.</div>");
+function showAlert(message) {
+	$("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> Have a nice day sir.</div>");
 	$("#myAlert").css("display", "");
 
 	$("#myAlert").fadeTo(1500, 500).slideUp(500, function () {
@@ -390,7 +390,7 @@ $('#createPallet').click(function () {
 			if (data.error == true) {
 				showAlertError();
 			} else {
-				showAlert();
+				showAlert(data.msg);
 				// alert(data.msg);
 			}
 		},
@@ -433,7 +433,7 @@ $('#createPallet').click(function () {
 					<label>From</label>
 					<select class="form-control" id="startDate" name="startDate">
 						<option>2016-03-26</option>
-                        <option>2016-03-25</option>
+						<option>2016-03-25</option>
 						<option>2016-03-24</option>
 						<option>2016-03-23</option>
 						<option>2016-03-22</option>
@@ -450,7 +450,7 @@ $('#createPallet').click(function () {
 				<div class="form-group">
 					<label>Until</label>
 					<select class="form-control" id="endDate" name="endDate">
-                        <option>2016-03-26</option>
+						<option>2016-03-26</option>
 						<option>2016-03-25</option>
 						<option>2016-03-24</option>
 						<option>2016-03-23</option>
@@ -477,9 +477,9 @@ $('#createPallet').click(function () {
 </script>
 
 <script>
-function showAlertBlocked() {
+function showAlertBlocked(message) {
 
-	$("#myAlertBlock").append("<div class='alert alert-success alert-dismissable' role='alert' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>These pallets are now blocked!</strong> None of the blocked pallets will be delivered to customers. Have a nice day sir!</div>");
+	$("#myAlertBlock").append("<div class='alert alert-success alert-dismissable' role='alert' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> None of the blocked pallets will be delivered to customers. Have a nice day sir!</div>");
 	$("#myAlertBlock").css("display", "");
 
 	$("#myAlertBlock").fadeTo(2500, 500).slideUp(500, function () {
@@ -500,8 +500,8 @@ function showAlertErrorBlocked() {
 	$("#myAlertBlock").fadeTo(3500, 500).slideUp(500, function () {
 		$("#myAlertBlock").alert('close');
 	});
-    
-    setTimeout(function () {
+
+	setTimeout(function () {
 		window.location.reload();
 	}, 3000);
 
@@ -524,7 +524,7 @@ $('#blockPallet').click(function () {
 			if (data.error == true) {
 				showAlertErrorBlocked();
 			} else {
-				showAlertBlocked();
+				showAlertBlocked(data.msg);
 			}
 		},
 
