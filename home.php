@@ -64,7 +64,7 @@ if (!isset($_SESSION['username'])) {
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="home.html">Home</a></li>
+                                <li class="active"><a href="home.php">Home</a></li>
                                 <li><a href="cookies.php">Cookies</a></li>
                                 <li><a href="production.php">Production</a></li>
                                 <li><a href="orders.php">Orders</a></li>

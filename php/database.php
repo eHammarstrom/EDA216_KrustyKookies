@@ -124,6 +124,25 @@ class Database {
 
 		return $rows;
 	}
+	
+	public function getIngredients() {
+        $sql = "SELECT * FROM ingredients";
+        $result = $this->executeQuery($sql);
+        return $result;
+	}
+	
+	public function getCookies() {
+        $sql = "SELECT * FROM cookies";
+        $result = $this->executeQuery($sql);
+        return $result;
+	}
+	
+	public function getCookieIngredients($cookieName) {
+        $sql = 'SELECT * FROM cookieingredients WHERE cookiename = ?';
+        $result = $this->executeQuery($sql, array($cookieName));
+        return $result;
+	}
+	
 }
 
 
