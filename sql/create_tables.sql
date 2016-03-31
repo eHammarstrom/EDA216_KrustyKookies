@@ -37,7 +37,6 @@ CREATE TABLE Users(
 	password varChar(128) NOT NULL,
 	salt varChar(16) NOT NULL,
 	PRIMARY KEY (userName)
-	/** FOREIGN KEY (userName) REFERENCES Customers (name) ON DELETE CASCADE ON UPDATE CASCADE */
 );
 
 CREATE TABLE Orders(
@@ -91,26 +90,34 @@ INSERT INTO Units VALUES ('dl');
 
 /**Ingredients*/
 
-INSERT INTO Ingredients VALUES ('Flour', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Butter', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Icing sugar', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Roasted, chopped nuts', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Fine-ground nuts', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Ground, roasted nuts', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Bread crumbs', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Sugar', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Egg whites', 100000, NOW(), 'dl');
-INSERT INTO Ingredients VALUES ('Chocolate', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Marzipan', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Eggs', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Potato starch', 100000, NOW(), 'g');
-INSERT INTO Ingredients VALUES ('Wheat flour', 100000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Flour', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Butter', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Icing sugar', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Roasted, chopped nuts', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Fine-ground nuts', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Ground, roasted nuts', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Bread crumbs', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Sugar', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Egg whites', 1000000, NOW(), 'dl');
+INSERT INTO Ingredients VALUES ('Chocolate', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Marzipan', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Eggs', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Potato starch', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Wheat flour', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Sodium bicarbonate', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Vanilla', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Cinnamon', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Chopped almonds', 1000000, NOW(), 'g');
+INSERT INTO Ingredients VALUES ('Vanilla sugar', 100, NOW(), 'g');
 
 /**Cookies*/
 
 INSERT INTO Cookies VALUES ('Nut ring');
 INSERT INTO Cookies VALUES ('Nut cookie');
 INSERT INTO Cookies VALUES ('Amneris');
+INSERT INTO Cookies VALUES ('Tango');
+INSERT INTO Cookies VALUES ('Almond delight');
+INSERT INTO Cookies VALUES ('Berliner');
 
 /**CookieIngredients*/
 
@@ -132,3 +139,21 @@ INSERT INTO CookieIngredients VALUES ('Amneris', 'Eggs', 250, 'g');
 INSERT INTO CookieIngredients VALUES ('Amneris', 'Potato starch', 25, 'g');
 INSERT INTO CookieIngredients VALUES ('Amneris', 'Wheat flour', 25, 'g');
 
+INSERT INTO CookieIngredients VALUES ('Tango', 'Flour', 300, 'g');
+INSERT INTO CookieIngredients VALUES ('Tango', 'Butter', 200, 'g');
+INSERT INTO CookieIngredients VALUES ('Tango', 'Sugar', 250, 'g');
+INSERT INTO CookieIngredients VALUES ('Tango', 'Sodium bicarbonate', 4, 'g');
+INSERT INTO CookieIngredients VALUES ('Tango', 'Vanilla', 2, 'g');
+
+INSERT INTO CookieIngredients VALUES ('Almond delight', 'Flour', 400, 'g');
+INSERT INTO CookieIngredients VALUES ('Almond delight', 'Butter', 400, 'g');
+INSERT INTO CookieIngredients VALUES ('Almond delight', 'Sugar', 270, 'g');
+INSERT INTO CookieIngredients VALUES ('Almond delight', 'Chopped almonds', 279, 'g');
+INSERT INTO CookieIngredients VALUES ('Almond delight', 'Cinnamon', 10, 'g');
+
+INSERT INTO CookieIngredients VALUES ('Berliner', 'Flour', 350, 'g');
+INSERT INTO CookieIngredients VALUES ('Berliner', 'Butter', 250, 'g');
+INSERT INTO CookieIngredients VALUES ('Berliner', 'Icing sugar', 100, 'g');
+INSERT INTO CookieIngredients VALUES ('Berliner', 'Eggs', 50, 'g');
+INSERT INTO CookieIngredients VALUES ('Berliner', 'Vanilla sugar', 5, 'g');
+INSERT INTO CookieIngredients VALUES ('Berliner', 'Chocolate', 50, 'g');
