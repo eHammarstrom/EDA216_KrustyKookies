@@ -13,9 +13,7 @@ if (isset($_POST["cookie"]) && isset($_POST["numberOfPallets"])) {
 	$nbrCreated = 0;
 
 	for($i = 0; $i < $numberOfPallets; $i++) {
-		//$sql = "INSERT INTO pallets(blocked, cookie) VALUES(?,?)";
-		//$database->executeQuery($sql, array($blocked, $cookie));  
-		$result = $database->createPallets($cookie);
+		$result = $database->createPallet($cookie);
 
 		if ($result == true) {
 			++$nbrCreated;

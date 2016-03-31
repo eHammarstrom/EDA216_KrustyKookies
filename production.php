@@ -477,9 +477,9 @@ $('#createPallet').click(function () {
 </script>
 
 <script>
-function showAlertBlocked() {
+function showAlertBlocked(message) {
 
-	$("#myAlertBlock").append("<div class='alert alert-success alert-dismissable' role='alert' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>These pallets are now blocked!</strong> None of the blocked pallets will be delivered to customers. Have a nice day sir!</div>");
+	$("#myAlertBlock").append("<div class='alert alert-success alert-dismissable' role='alert' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> None of the blocked pallets will be delivered to customers. Have a nice day sir!</div>");
 	$("#myAlertBlock").css("display", "");
 
 	$("#myAlertBlock").fadeTo(2500, 500).slideUp(500, function () {
@@ -524,7 +524,7 @@ $('#blockPallet').click(function () {
 			if (data.error == true) {
 				showAlertErrorBlocked();
 			} else {
-				showAlertBlocked();
+				showAlertBlocked(data.msg);
 			}
 		},
 

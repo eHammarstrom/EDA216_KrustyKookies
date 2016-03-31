@@ -87,7 +87,7 @@ class Database {
 		return $dbResult;
 	}
 
-    public function createPallets($cookie) {
+    public function createPallet($cookie) {
 		$blocked = 0;
 
 		$this->getConnection()->beginTransaction();
@@ -112,6 +112,19 @@ class Database {
 		}
 		return true;
     }
+
+	public function blockPallets($startDate, $endDate, $cookie) {
+		$this->getConnection()->beginTransaction();
+
+		$sql = "UPDATE pallets SET blocked = 1 WHERE dateCreated BETWEEN ? AND ? AND cookie = ?";
+
+		$rows = $this->executeUpdate($sql, array($startDate, $endDate, $cookie));
+
+		$this->getConnection()->commit();
+
+		return $rows;
+	}
 }
+
 
 ?>
