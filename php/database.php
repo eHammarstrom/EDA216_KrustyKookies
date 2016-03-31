@@ -89,8 +89,8 @@ class Database {
 
     public function createPallets($cookie) {
 		$blocked = 0;
-        
-		$this->conn->beginTransaction();
+
+		$this->getConnection()->beginTransaction();
 			
 		$sql = "INSERT INTO pallets(blocked, cookie) VALUES(?,?)";
 			
@@ -100,11 +100,11 @@ class Database {
 		$ingredientCheck = $this->checkIngredients($cookie);
 		
 		if($ingredientCheck < 0){	
-				$this->conn->rollBack();
+				$this->getConnection()->rollBack();
 				return false;
 			}
 
-		$this->conn->commit();
+		$this->getConnection()->commit();
 		
 		foreach($ingredientCheck as $credentials){
 			$sql = "UPDATE ingredients SET currentAmount = (currentAmount - (?*54)) WHERE ingredientName = ?";

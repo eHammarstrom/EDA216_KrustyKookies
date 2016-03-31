@@ -10,14 +10,21 @@ if (isset($_POST["cookie"]) && isset($_POST["numberOfPallets"])) {
 	$database = new Database();
 	$blocked = 0;
 
+	$nbrCreated = 0;
+
 	for($i = 0; $i < $numberOfPallets; $i++) {
-		$sql = "INSERT INTO pallets(blocked, cookie) VALUES(?,?)";
-		$database->executeQuery($sql, array($blocked, $cookie));  
+		//$sql = "INSERT INTO pallets(blocked, cookie) VALUES(?,?)";
+		//$database->executeQuery($sql, array($blocked, $cookie));  
+		$result = $database->createPallets($cookie);
+
+		if ($result == true) {
+			++$nbrCreated;
+		}
 	}
 
 	$response = [
 		'error' => false,
-		'msg' => 'Success.'
+		'msg' => 'Success. '.$nbrCreated.' pallet(s) created.'
 	];
 
 	header('Content-Type: application/json');
