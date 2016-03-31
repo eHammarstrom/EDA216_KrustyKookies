@@ -128,11 +128,33 @@ class Database {
 		return $rows;
 	}
 
+	
+	public function getIngredients() {
+        	$sql = "SELECT * FROM ingredients";
+        	$result = $this->executeQuery($sql);
+        	return $result;
+	}
+	
+	public function getCookies() {
+        	$sql = "SELECT * FROM cookies";
+        	$result = $this->executeQuery($sql);
+        	return $result;
+	}
+	
+	public function getCookieIngredients($cookieName) {
+        	$sql = 'SELECT * FROM cookieingredients WHERE cookiename = ?';
+        	$result = $this->executeQuery($sql, array($cookieName));
+        	return $result;
+	}
+	
+
+
 	public function getPalletDates() {
 		$sql = "SELECT DISTINCT DATE_FORMAT(dateCreated, '%Y-%m-%d') as dateCreated FROM pallets";
 		$result = $this->executeQuery($sql);
 		return $result;
 	}
+
 }
 
 
