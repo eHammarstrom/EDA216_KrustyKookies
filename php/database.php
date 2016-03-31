@@ -135,12 +135,6 @@ class Database {
         	return $result;
 	}
 	
-	public function getCookies() {
-        	$sql = "SELECT * FROM cookies";
-        	$result = $this->executeQuery($sql);
-        	return $result;
-	}
-	
 	public function getCookieIngredients($cookieName) {
         	$sql = 'SELECT * FROM cookieingredients WHERE cookiename = ?';
         	$result = $this->executeQuery($sql, array($cookieName));
