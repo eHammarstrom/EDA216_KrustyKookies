@@ -11,8 +11,8 @@ $database = new Database();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+	<html lang="en">
 
 	<head>
 		<meta charset="utf-8">
@@ -55,100 +55,100 @@ $database = new Database();
 	<!-- NAVBAR
 	 ================================================== -->
 
-	 <body>
-		 <div class="navbar-wrapper">
-			 <div class="container">
+	<body>
+		<div class="navbar-wrapper">
+			<div class="container">
 
-				 <nav class="navbar navbar-inverse navbar-static-top navbar-custom">
-					 <div class="container">
-						 <div class="navbar-header">
-							 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-								 <span class="sr-only">Toggle navigation</span>
-								 <span class="icon-bar"></span>
-								 <span class="icon-bar"></span>
-								 <span class="icon-bar"></span>
-							 </button>
-							 <a class="navbar-brand" href="home.php">Krusty Kookies</a>
-						 </div>
-						 <div id="navbar" class="navbar-collapse collapse">
-							 <ul class="nav navbar-nav">
-								 <li><a href="home.php">Home</a></li>
-								 <li><a href="cookies.php">Cookies</a></li>
-								 <li class="active"><a href="production.php">Production</a></li>
-								 <li><a href="orders.php">Orders</a></li>
-								 <li><a href="contact.php">Contact</a></li>
-							 </ul>
-							 <ul class="nav navbar-nav navbar-right">
-								 <li><a href="logout.php">Logout</a></li>
-							 </ul>
-						 </div>
-					 </div>
-				 </nav>
+				<nav class="navbar navbar-inverse navbar-static-top navbar-custom">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="home.php">Krusty Kookies</a>
+						</div>
+						<div id="navbar" class="navbar-collapse collapse">
+							<ul class="nav navbar-nav">
+								<li><a href="home.php">Home</a></li>
+								<li><a href="cookies.php">Cookies</a></li>
+								<li class="active"><a href="production.php">Production</a></li>
+								<li><a href="orders.php">Orders</a></li>
+								<li><a href="contact.php">Contact</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="php/logout.php">Logout</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
 
-			 </div>
-		 </div>
+			</div>
+		</div>
 
 
-		 <!-- Carousel
+		<!-- Carousel
 	   ================================================== -->
 
-	   <div id="container">
+		<div id="container">
 
-		   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-			   <!-- Indicators -->
-			   <ol class="carousel-indicators">
-				   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				   <li data-target="#myCarousel" data-slide-to="1"></li>
-				   <li data-target="#myCarousel" data-slide-to="2"></li>
-			   </ol>
-			   <div class="carousel-inner" role="listbox">
-				   <div class="item active">
-					   <img class="first-slide" src="images/cookie1.png" alt="First slide">
-					   <div class="container">
-						   <div class="carousel-caption">
-							   <h1>Example headline.</h1>
-							   <!--              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>-->
-							   <!--              <p><a class="btn btn-lg btn-primary" href="#" role="button" background-color>Sign up today</a></p>-->
-						   </div>
-					   </div>
-				   </div>
-				   <div class="item">
-					   <img class="second-slide" src="images/cookie1.png" alt="Second slide">
-					   <div class="container">
-						   <div class="carousel-caption">
-							   <h1>Another example headline.</h1>
-							   <!--              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
-							   <!--              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
-						   </div>
-					   </div>
-				   </div>
-				   <div class="item">
-					   <img class="third-slide" src="images/cookie1.png" alt="Third slide">
-					   <div class="container">
-						   <div class="carousel-caption">
-							   <h1>One more for good measure.</h1>
-							   <!--              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
-							   <!--              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>-->
-						   </div>
-					   </div>
-				   </div>
-			   </div>
-			   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-				   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				   <span class="sr-only">Previous</span>
-			   </a>
-			   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-				   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				   <span class="sr-only">Next</span>
-			   </a>
-		   </div>
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img class="first-slide" src="images/cookie1.png" alt="First slide">
+						<div class="container">
+							<div class="carousel-caption">
+								<h1>Fabulous</h1>
+								<!--              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>-->
+								<!--              <p><a class="btn btn-lg btn-primary" href="#" role="button" background-color>Sign up today</a></p>-->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="second-slide" src="images/cookie1.png" alt="Second slide">
+						<div class="container">
+							<div class="carousel-caption">
+								<h1>Amazing</h1>
+								<!--              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+								<!--              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="third-slide" src="images/cookie1.png" alt="Third slide">
+						<div class="container">
+							<div class="carousel-caption">
+								<h1>Fantastic</h1>
+								<!--              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
+								<!--              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
 
-	   </div>
+		</div>
 
-	   <!-- /.carousel -->
+		<!-- /.carousel -->
 
 
-	   <!-- Marketing messaging and featurettes
+		<!-- Marketing messaging and featurettes
 		================================================== -->
 		<!-- Wrap the rest of the page in another container to center all the content. -->
 
@@ -170,33 +170,33 @@ $database = new Database();
 						<div class="jquery-script-clear"></div>
 					</div>
 				</div>
-<script>
-$(document).ready(function () {
+				<script>
+					$(document).ready(function () {
 
-	$('table[name=example-table]').tableFilter({
+						$('table[name=example-table]').tableFilter({
 
-	//input : "input[type=search]", Default element
+							//input : "input[type=search]", Default element
 
-	trigger: {
+							trigger: {
 
-	event: "keyup", //element : "button[name=btn-filtro]"
-},
+								event: "keyup", //element : "button[name=btn-filtro]"
+							},
 
-	//timeout: 80,
+							//timeout: 80,
 
-	sort: true,
+							sort: true,
 
-	//caseSensitive : false, Default
+							//caseSensitive : false, Default
 
-	callback: function () { /* Callback após o filtro */
+							callback: function () { /* Callback após o filtro */
 
-	},
+							},
 
-	notFoundElement: ".not-found"
-});
+							notFoundElement: ".not-found"
+						});
 
-});
-</script>
+					});
+				</script>
 
 
 
@@ -234,7 +234,7 @@ $(document).ready(function () {
 							</thead>
 
 
-<?php 
+							<?php 
 
 $pallets = $database->getPallets();
 
@@ -258,7 +258,7 @@ if (!empty($pallets)) {
 }
 ?>
 
-			 </tbody>
+
 
 						</table>
 
@@ -267,37 +267,37 @@ if (!empty($pallets)) {
 				</div>
 			</div>
 
-<script>
-$(function () {
-	var i = 1;
-	$('#calc:first').find('.input-group-addon').html(i);
-	$(document).on('click', '.btn-add', function (e) {
-		e.preventDefault();
+			<script>
+				$(function () {
+					var i = 1;
+					$('#calc:first').find('.input-group-addon').html(i);
+					$(document).on('click', '.btn-add', function (e) {
+						e.preventDefault();
 
-		var controlForm = $('#calc:first')
-			, currentEntry = $(this).parent('.entry:first')
-			, newEntry = $(currentEntry.clone()).appendTo(controlForm);
-		$(newEntry).find('.input-group-addon').html(++i);
+						var controlForm = $('#calc:first')
+							, currentEntry = $(this).parent('.entry:first')
+							, newEntry = $(currentEntry.clone()).appendTo(controlForm);
+						$(newEntry).find('.input-group-addon').html(++i);
 
-		newEntry.find('input').val('');
-		controlForm.find('.entry:not(:last) .btn-add')
-			.removeClass('btn-add').addClass('btn-remove')
-			.removeClass('btn-success').addClass('btn-danger')
-			.html('<span class="glyphicon glyphicon-minus"></span>');
-	}).on('click', '.btn-remove', function (e) {
-		i--;
-		$(this).parent().nextAll('.entry').each(function () {
-			$(this).find('.input-group-addon').html($(this).find('.input-group-addon').html() - 1);
-		});
-		$(this).parents('.entry:first').remove();
+						newEntry.find('input').val('');
+						controlForm.find('.entry:not(:last) .btn-add')
+							.removeClass('btn-add').addClass('btn-remove')
+							.removeClass('btn-success').addClass('btn-danger')
+							.html('<span class="glyphicon glyphicon-minus"></span>');
+					}).on('click', '.btn-remove', function (e) {
+						i--;
+						$(this).parent().nextAll('.entry').each(function () {
+							$(this).find('.input-group-addon').html($(this).find('.input-group-addon').html() - 1);
+						});
+						$(this).parents('.entry:first').remove();
 
 
 
-		e.preventDefault();
-		return false;
-	});
-});
-</script>
+						e.preventDefault();
+						return false;
+					});
+				});
+			</script>
 
 			<hr class="featurette-divider">
 
@@ -313,7 +313,8 @@ $(function () {
 						<input type="hidden" name="action" value="submit" />
 
 						<select class="form-control" id="cookie" name="cookie">
-<?php
+
+							<?php
 
 $cookies = $database->getCookies();
 
@@ -352,68 +353,68 @@ if (!empty($cookies)) {
 
 				</div>
 
-<script>
-function showAlert(message) {
-	$("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> Have a nice day sir.</div>");
-	$("#myAlert").css("display", "");
+				<script>
+					function showAlert(message) {
+						$("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> Have a nice day sir.</div>");
+						$("#myAlert").css("display", "");
 
-	$("#myAlert").fadeTo(1500, 500).slideUp(500, function () {
-		$("#myAlert").alert('close');
-	});
+						$("#myAlert").fadeTo(2500, 500).slideUp(500, function () {
+							$("#myAlert").alert('close');
+						});
 
-	setTimeout(function () {
-		window.location.reload();
-	}, 2000);
-}
-</script>
+						setTimeout(function () {
+							window.location.reload();
+						}, 3000);
+					}
+				</script>
 
-<script>
-function showAlertError() {
-	$("#myAlert").append("<div class='alert alert-danger alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Submit failed!</strong> There is not enough raw materials to create the pallets! Please come back later.</div>");
+				<script>
+					function showAlertError() {
+						$("#myAlert").append("<div class='alert alert-danger alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Submit failed!</strong> There is not enough raw materials to create the pallets! Please come back later.</div>");
 
-	$("#myAlert").css("display", "");
+						$("#myAlert").css("display", "");
 
-	$("#myAlert").fadeTo(1500, 500).slideUp(500, function () {
-		$("#myAlert").alert('close');
-	});
+						$("#myAlert").fadeTo(2500, 500).slideUp(500, function () {
+							$("#myAlert").alert('close');
+						});
 
-	setTimeout(function () {
-		window.location.reload();
-	}, 2000);
-}
-</script>
+						setTimeout(function () {
+							window.location.reload();
+						}, 3000);
+					}
+				</script>
 			</form>
 
-<script>
-$('#createPallet').click(function () {
-	console.log('clicked create button');
-	$.ajax({
-	type: 'POST'
-		, url: '../php/createPallet.php'
-		, data: $('#formCreatePallet').serialize()
-		, dataType: 'json'
-		, success: function (data) {
-			if (data.error == true) {
-				showAlertError();
-			} else {
-				showAlert(data.msg);
-				// alert(data.msg);
-			}
-		},
+			<script>
+				$('#createPallet').click(function () {
+					console.log('clicked create button');
+					$.ajax({
+						type: 'POST'
+						, url: '../php/createPallet.php'
+						, data: $('#formCreatePallet').serialize()
+						, dataType: 'json'
+						, success: function (data) {
+							if (data.error == true) {
+								showAlertError();
+							} else {
+								showAlert(data.msg);
+								// alert(data.msg);
+							}
+						},
 
-		beforeSend: function () {
+						beforeSend: function () {
 
-		}
-	, complete: function () {
-		// alert('ajax call completed');
-	}
-	, error: function (exception) {
-		// alert("error" . exception);
-	}
-	});
-	return false;
-});
-</script>
+						}
+						, complete: function () {
+							// alert('ajax call completed');
+						}
+						, error: function (exception) {
+							// alert("error" . exception);
+						}
+					});
+					return false;
+				});
+			</script>
 
 
 			<hr class="featurette-divider">
@@ -429,7 +430,7 @@ $('#createPallet').click(function () {
 						<input type="hidden" name="action" value="submit" />
 
 						<select class="form-control" id="cookie" name="cookie">
-<?php
+							<?php
 
 if (!empty($cookies)) {
 	foreach ($cookies as $cookie) {
@@ -446,7 +447,7 @@ if (!empty($cookies)) {
 				<div class="form-group">
 					<label>From</label>
 					<select class="form-control" id="startDate" name="startDate">
-<?php
+						<?php
 
 $palletDates = $database->getPalletDates();
 
@@ -462,7 +463,7 @@ foreach($palletDates as $palletDate) {
 				<div class="form-group">
 					<label>Until</label>
 					<select class="form-control" id="endDate" name="endDate">
-<?php
+						<?php
 
 foreach($palletDates as $palletDate) {
 	echo '<option>';
@@ -480,71 +481,71 @@ foreach($palletDates as $palletDate) {
 					<h2> </h2>
 				</div>
 
-<script>
-function showAlertBlocked(message) {
+				<script>
+					function showAlertBlocked(message) {
 
-	$("#myAlertBlock").append("<div class='alert alert-success alert-dismissable' role='alert' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> None of the blocked pallets will be delivered to customers. Have a nice day sir!</div>");
-	$("#myAlertBlock").css("display", "");
+						$("#myAlertBlock").append("<div class='alert alert-success alert-dismissable' role='alert' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> None of the blocked pallets will be delivered to customers. Have a nice day sir!</div>");
+						$("#myAlertBlock").css("display", "");
 
-	$("#myAlertBlock").fadeTo(2500, 500).slideUp(500, function () {
-		$("#myAlertBlock").alert('close');
-	});
+						$("#myAlertBlock").fadeTo(3500, 500).slideUp(500, function () {
+							$("#myAlertBlock").alert('close');
+						});
 
-	setTimeout(function () {
-		window.location.reload();
-	}, 3000);
+						setTimeout(function () {
+							window.location.reload();
+						}, 4000);
 
-}
-</script>
+					}
+				</script>
 
-<script>
-function showAlertErrorBlocked() {
-	$("#myAlertBlock").append("<div class='alert alert-danger alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Block failed!</strong> Invalid input or no pallets of the spcified cookie have been created between those dates.</div>");
+				<script>
+					function showAlertErrorBlocked() {
+						$("#myAlertBlock").append("<div class='alert alert-danger alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Block failed!</strong> Invalid input or no pallets of the spcified cookie have been created between those dates.</div>");
 
-	$("#myAlertBlock").fadeTo(3500, 500).slideUp(500, function () {
-		$("#myAlertBlock").alert('close');
-	});
+						$("#myAlertBlock").fadeTo(3500, 500).slideUp(500, function () {
+							$("#myAlertBlock").alert('close');
+						});
 
-	setTimeout(function () {
-		window.location.reload();
-	}, 3000);
+						setTimeout(function () {
+							window.location.reload();
+						}, 4000);
 
-}
-</script>
+					}
+				</script>
 			</form>
 
 
 
 
-<script>
-$('#blockPallet').click(function () {
-	console.log('clicked block button');
-	$.ajax({
-	type: 'POST'
-		, url: '../php/blockPallet.php'
-		, data: $('#formBlockPallet').serialize()
-		, dataType: 'json'
-		, success: function (data) {
-			if (data.error == true) {
-				showAlertErrorBlocked();
-			} else {
-				showAlertBlocked(data.msg);
-			}
-		},
+			<script>
+				$('#blockPallet').click(function () {
+					console.log('clicked block button');
+					$.ajax({
+						type: 'POST'
+						, url: '../php/blockPallet.php'
+						, data: $('#formBlockPallet').serialize()
+						, dataType: 'json'
+						, success: function (data) {
+							if (data.error == true) {
+								showAlertErrorBlocked();
+							} else {
+								showAlertBlocked(data.msg);
+							}
+						},
 
-		beforeSend: function () {
+						beforeSend: function () {
 
-		}
-	, complete: function () {
-		//   alert('ajax call completed');
-	}
-	, error: function (exception) {
-		//  alert("error" . exception);
-	}
-	});
-	return false;
-});
-</script>
+						}
+						, complete: function () {
+							//   alert('ajax call completed');
+						}
+						, error: function (exception) {
+							//  alert("error" . exception);
+						}
+					});
+					return false;
+				});
+			</script>
 
 
 			<hr class="featurette-divider">
@@ -563,17 +564,17 @@ $('#blockPallet').click(function () {
 
 		<!-- Bootstrap core JavaScript
 	  ================================================== -->
-	  <!-- Placed at the end of the document so the pages load faster -->
-	  <script src="js/jquery.searchable-1.0.0.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')
-	</script>
-<script src="dist/js/bootstrap.min.js"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="assets/js/vendor/holder.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-	 </body>
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="js/jquery.searchable-1.0.0.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="/assets/js/vendor/jquery.min.js"><\/script>')
+		</script>
+		<script src="dist/js/bootstrap.min.js"></script>
+		<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+		<script src="assets/js/vendor/holder.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+	</body>
 
 
-</html>
+	</html>

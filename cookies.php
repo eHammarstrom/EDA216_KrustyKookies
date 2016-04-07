@@ -141,7 +141,7 @@ $database = new Database();
 				<p>Here you can find our magical recipes.</p>
 			</div>
 
-<?php
+			<?php
 			
 $cookies = $database->getCookies();			
 
@@ -173,13 +173,13 @@ print '<hr class="featurette-divider">';
 ?>
 
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-	<h2>Storage of Ingredients</h2>
-	<p>Here you can see the current amount in storage of each ingredient and when last delivered.</p>
-</div>
+				<!-- Main jumbotron for a primary marketing message or call to action -->
+				<div class="jumbotron">
+					<h2>Storage of Ingredients</h2>
+					<p>Here you can see the current amount in storage of each ingredient and when last delivered.</p>
+				</div>
 
-<?php
+				<?php
 
 $ingredients = $database->getIngredients();
 				
@@ -210,38 +210,6 @@ print '<hr class="featurette-divider">';
            
 ?>
 
-					<!-- EXAMPLE FOR FUTURE USE
-		<table class="table table-striped">
-		<thead>
-		<tr>
-		<th>#</th>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Username</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-		<th scope=row>1</th>
-		<td>Mark</td>
-		<td>Otto</td>
-		<td>@mdo</td>
-		</tr>
-		<tr>
-		<th scope=row>2</th>
-		<td>Jacob</td>
-		<td>Thornton</td>
-		<td>@fat</td>
-		</tr>
-		<tr>
-		<th scope=row>3</th>
-		<td>Larry</td>
-		<td>the Bird</td>
-		<td>@twitter</td>
-		</tr>
-		</tbody>
-		</table>
-		  -->
 
 					<!-- FOOTER -->
 					<footer>
