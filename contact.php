@@ -89,7 +89,7 @@ if (!isset($_SESSION['username'])) {
 				   <img class="first-slide" src="images/cookie1.png" alt="First slide">
 				   <div class="container">
 					   <div class="carousel-caption">
-						   <h1>Example headline.</h1>
+						   <h1>Fabulous</h1>
 						   <!--              <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>-->
 						   <!--              <p><a class="btn btn-lg btn-primary" href="#" role="button" background-color>Sign up today</a></p>-->
 					   </div>
@@ -99,7 +99,7 @@ if (!isset($_SESSION['username'])) {
 				   <img class="second-slide" src="images/cookie1.png" alt="Second slide">
 				   <div class="container">
 					   <div class="carousel-caption">
-						   <h1>Another example headline.</h1>
+						   <h1>Amazing</h1>
 						   <!--              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
 						   <!--              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
 					   </div>
@@ -109,7 +109,7 @@ if (!isset($_SESSION['username'])) {
 				   <img class="third-slide" src="images/cookie1.png" alt="Third slide">
 				   <div class="container">
 					   <div class="carousel-caption">
-						   <h1>One more for good measure.</h1>
+						   <h1>Fantastic</h1>
 						   <!--              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
 						   <!--              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>-->
 					   </div>
@@ -158,7 +158,7 @@ if (!isset($_SESSION['username'])) {
 				   <!--          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
 			   </div><!-- /.col-lg-4 -->
 			   <div class="col-lg-4">
-				   <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+				   <img class="img-circle" src="images/adam.jpg" alt="Generic placeholder image" width="140" height="140">
 				   <h2>Adam Thuvesen</h2>
 				   <p><strong>Position:</strong> Developer, front-end</p>
 				   <p><strong>Email:</strong> Dic14ath@student.lu.se</p>

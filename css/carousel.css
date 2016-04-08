@@ -55,7 +55,7 @@ body {
 }
 
 .tt-overlay-bg {
-    background: rgba(26, 30, 35, 0.85);
+    background: rgba(26, 30, 35, 0.80);
     padding: 110px 0;
 }
 
@@ -74,6 +74,11 @@ body {
     font-size: 18px;
     font-weight: 700;
     margin: 0;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  .facts-section { display: none; }   /* hide it elsewhere */
 }
 
 

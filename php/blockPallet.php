@@ -21,7 +21,7 @@ if (isset($_POST["cookie"]) && isset($_POST["startDate"]) && isset($_POST["endDa
 
 		$response = [
 			'error' => false,
-			'msg' => 'Success. '.$rows.' row(s) blocked.'
+			'msg' => 'Success! '.$rows.' row(s) blocked.'
 		];     
 	}          
 
