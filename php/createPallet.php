@@ -20,10 +20,17 @@ if (isset($_POST["cookie"]) && isset($_POST["numberOfPallets"])) {
 		}
 	}
 
-	$response = [
-		'error' => false,
-		'msg' => 'Success! '.$nbrCreated.' pallet(s) created.'
-	];
+	if ($nbrCreated > 0) {
+		$response = [
+			'error' => false,
+			'msg' => $nbrCreated.' pallet(s) created.'
+		];
+	} else {
+		$response = [
+			'error' => true,
+			'msg' => $nbrCreated.' pallet(s) created.'
+		];
+	}
 
 	header('Content-Type: application/json');
 	echo json_encode($response);  

@@ -355,7 +355,7 @@ if (!empty($cookies)) {
 
 				<script>
 					function showAlert(message) {
-						$("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>" + message + "</strong> Have a nice day sir.</div>");
+						$("#myAlert").append("<div class='alert alert-success alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Success! " + message + "</strong> Have a nice day sir.</div>");
 						$("#myAlert").css("display", "");
 
 						$("#myAlert").fadeTo(2500, 500).slideUp(500, function () {
@@ -369,8 +369,8 @@ if (!empty($cookies)) {
 				</script>
 
 				<script>
-					function showAlertError() {
-						$("#myAlert").append("<div class='alert alert-danger alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Submit failed!</strong> There is not enough raw materials to create the pallets! Please come back later.</div>");
+					function showAlertError(message) {
+						$("#myAlert").append("<div class='alert alert-danger alert-dismissable' id='myAlert2'> <button type='button' class='close' data-dismiss='alert'  aria-hidden='true'>&times;</button><strong>Failed! " + message + "</strong> There is not enough raw materials to create the pallets! Please come back later.</div>");
 
 						$("#myAlert").css("display", "");
 
@@ -395,21 +395,16 @@ if (!empty($cookies)) {
 						, dataType: 'json'
 						, success: function (data) {
 							if (data.error == true) {
-								showAlertError();
+								showAlertError(data.msg);
 							} else {
 								showAlert(data.msg);
-								// alert(data.msg);
 							}
 						},
-
 						beforeSend: function () {
-
-						}
-						, complete: function () {
-							// alert('ajax call completed');
-						}
-						, error: function (exception) {
-							// alert("error" . exception);
+						},
+						complete: function () {
+						},
+						error: function (exception) {
 						}
 					});
 					return false;
