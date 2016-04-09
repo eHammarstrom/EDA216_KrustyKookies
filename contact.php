@@ -142,7 +142,7 @@ if (!isset($_SESSION['username'])) {
 			   <div class="col-lg-4">
 				   <img class="img-circle" src="images/emil.jpg" alt="Generic placeholder image" width="140" height="140">
 				   <h2>Emil Hammarström</h2>
-				   <p><strong>Position:</strong> Developer, security</p>
+				   <p><strong>Position:</strong> Developer, back-end</p>
 				   <p><strong>Email:</strong> Dic14eh2@student.lu.se</p>
 				   <p><strong>Phone number:</strong> 073-656 80 82</p>
 				   <p><strong>Favourite cookie:</strong> Singoalla</p>
@@ -151,7 +151,7 @@ if (!isset($_SESSION['username'])) {
 			   <div class="col-lg-4">
 				   <img class="img-circle" src="images/pontus.jpg" alt="Generic placeholder image" width="140" height="140">
 				   <h2>Pontus Ovhagen</h2>
-				   <p><strong>Position:</strong> Developer, back-end</p>
+				   <p><strong>Position:</strong> Developer, design and scripting of database</p>
 				   <p><strong>Email:</strong> Dic14pov@student.lu.se</p>
 				   <p><strong>Phone number:</strong> 073-386 42 37</p>
 				   <p><strong>Favourite cookie:</strong> Kvarg-cookie</p>
