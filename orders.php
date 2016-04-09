@@ -71,7 +71,7 @@ if (!isset($_SESSION['username'])) {
 								<li><a href="home.php">Home</a></li>
 								<li><a href="cookies.php">Cookies</a></li>
 								<li><a href="production.php">Production</a></li>
-								<li class="active"><a href="orders.html">Orders</a></li>
+								<li class="active"><a href="orders.php">Orders</a></li>
 								<li><a href="contact.php">Contact</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
