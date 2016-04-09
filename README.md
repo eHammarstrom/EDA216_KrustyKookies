@@ -1,9 +1,10 @@
 The program is written in HTML, CSS, JavaScript and PHP which demands that you can run your own PHP server on your computer to test the program. We want the users to feel safe and protect the company's production, thus your PHP server must have both the pdo\_mysql.so and mcrypt.so extensions available when starting the server for everything to function.
 
 1. Go into the given directory, "EDA216\_KrustyKookies".
-  Copy the address of the directory.
-  Make sure you have configured the php/connect\_data.php properly, it should contain data in the following form
+Copy the address of the directory.
+Make sure you have configured the php/connect\_data.php properly, it should contain data in the following form
 
+```php
 <?php
 $\_host = "puccini.cs.lth.se";
 
@@ -14,8 +15,10 @@ $\_password = "databasePassword";
 $\_database = "databaseName";
 
 ?>
+```
 
-  Also make sure to have executed the sql script sql/create\_tables.sql on the designated MySQL server using the same credentials as you entered in the php file mentioned above.
+
+Also make sure to have executed the sql script sql/create\_tables.sql on the designated MySQL server using the same credentials as you entered in the php file mentioned above.
 
 2. Open the command prompt.
 
