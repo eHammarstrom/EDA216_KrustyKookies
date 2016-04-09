@@ -44,7 +44,7 @@ session_destroy();
 
 <script>
 function visitPage() {
-	window.location = '../index.html';
+	window.location = '../index.php';
 }
 </script>
 		</div>
