@@ -83,6 +83,13 @@ CREATE TABLE Delivered(
 	FOREIGN KEY (customerName) REFERENCES Customers (name)
 );
 
+/**Test user with username: admin and pw: admin (salted and hashed) */
+
+INSERT INTO Users VALUES ('admin', '91a18bce74fde106912
+9d12a84a3e8acf730157477d5ae22d4570a720563f2e05dd87f719f
+0b7e2832ec8bf9baed0e054b7098897d3494f0d950249bc4e6ca23',
+'vQ0ZMnamcd2f7fL5');
+
 /**Units*/
 
 INSERT INTO Units VALUES ('g');
