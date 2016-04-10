@@ -30,3 +30,5 @@ The program is written in HTML, CSS, JavaScript and PHP which demands that you c
 5. Launch a web browser of your preference.
 
 6. Enter the address "http://localhost:8080/" and you will be directed to the starting page of the program.
+
+7. Test account admin:admin can be used if problems should occur, register problems may occur if php modules are not enabled properly.
